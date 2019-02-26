@@ -3,3 +3,4 @@ node_modules
 upload
 config/db.js
 dist/
+package-lock.json

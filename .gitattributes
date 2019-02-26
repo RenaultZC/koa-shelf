@@ -1,0 +1,38 @@
+# Ensures that all files that Git considers to be text will have normalized
+# (LF) line endings in the repository no matter which platform (by default git
+# use CRLF as line endings on Windows), so ESLint linebreak-style rule can work.
+# For more detail:
+# http://eslint.org/docs/rules/linebreak-style#using-this-rule-with-version-control-systems
+# https://stackoverflow.com/questions/29435156/what-will-text-auto-eol-lf-in-gitattributes-do
+#
+# NOTICE!!!
+# `text=auto` only work correctly after git v2.10.0 which is released
+# at Sep 1, 2016, ref:
+# https://github.com/git/git/blob/master/Documentation/RelNotes/2.10.0.txt#L248
+# For older git versions, you can change .gitattributes something like:
+# https://gist.github.com/ArminVieweg/c0fe55fe2fb25cd44772
+
+# Autodetect text files
+* text=auto
+
+# Force the following filetypes to have unix eols, so Windows does not break them.
+* text eol=lf
+
+# Force images/fonts to be handled as binaries
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.png binary
+*.t3x binary
+*.t3d binary
+*.exe binary
+*.data binary
+*.ttf binary
+*.eof binary
+*.eot binary
+*.swf binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.ogg binary
+*.flv binary

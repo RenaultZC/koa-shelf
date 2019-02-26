@@ -1,0 +1,54 @@
+{
+  "name": "koa-shelf",
+  "version": "1.0.0",
+  "description": "koa&amp;mysql2&amp;graphql",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist && mkdir dist",
+    "dev": "nodemon app/app.js --exec babel-node",
+    "build": "npm run clean && babel app -d dist --copy-files",
+    "start": "cross-env NODE_ENV=production forever start dist/app.js",
+    "deploy": "npm run stop && npm run build && npm run start",
+    "stop": "forever stop dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenaultZC/koa-shelf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RenaultZC/koa-shelf/issues"
+  },
+  "homepage": "https://github.com/RenaultZC/koa-shelf#readme",
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
+    "forever": "^0.15.3",
+    "graphql": "^14.1.1",
+    "koa": "^2.7.0",
+    "koa-body": "^4.0.8",
+    "koa-bodyparser": "^4.2.1",
+    "koa-graphql": "^0.8.0",
+    "koa-helmet": "^4.0.0",
+    "koa-log4": "^2.3.2",
+    "koa-logger": "^3.2.0",
+    "koa-respond": "^2.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.11",
+    "merge-graphql-schemas": "^1.5.8",
+    "mysql2": "^1.6.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.1",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.18.10"
+  }
+}

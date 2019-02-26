@@ -1,3 +1,7 @@
+type test{
+  text: String
+}
+
 type Query{
-  getText: [String]
+  getText: [test]
 }

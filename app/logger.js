@@ -13,5 +13,5 @@ export const getLogger = () => {
 }
 
 export const shutdownLogger = () => {
-  log4js.shutdown(() => {})
+  log4js.shutdown()
 }
